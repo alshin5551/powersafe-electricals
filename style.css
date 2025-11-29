@@ -1,0 +1,614 @@
+.navbg ,body {
+    
+    background: radial-gradient(circle, rgba(245, 237, 237, 1) 0%, rgba(148, 187, 233, 1) 100%);
+
+}
+
+/* Navbar Styling */
+.custom-nav {
+  background: #ffffff;            /* clean professional background */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  padding: 8px 0;
+}
+
+/* Logo blending */
+.logo {
+  height: 55px;
+  width: 55px;
+  object-fit: cover;
+  border-radius: 50%;              /* makes logo blend naturally */
+  background-color: transparent;   /* removes any background */
+}
+
+/* Brand text */
+.brand-text .title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.brand-text .tagline {
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: -2px;
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #333 !important;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #007bff !important;
+}
+/* Increase navbar size on large screens (≥992px) */
+@media (min-width: 992px) {
+  .custom-nav {
+    padding: 18px 0;          /* increase overall height */
+  }
+
+  .logo {
+    height: 70px;             /* bigger logo */
+    width: 70px;
+  }
+
+  .brand-text .title {
+    font-size: 1.4rem;        /* larger brand name */
+  }
+
+  .brand-text .tagline {
+    font-size: 0.9rem;        /* slightly larger tagline */
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.05rem;       /* bigger navigation links */
+    padding: 10px 14px;       /* increase click area */
+  }
+}
+
+/* Responsive fix for very small screens */
+@media (max-width: 400px) {
+  .logo {
+    height: 45px;
+    width: 45px;
+  }
+  .brand-text .title {
+    font-size: 1rem;
+  }
+  .brand-text .tagline {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* carousel section starts */
+.carouselslidefirst {
+  padding: 0;
+}
+
+/* Responsive image styling */
+.carousel-inner img {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: auto;
+  padding-bottom: 10px;
+  display: block;
+  transition: transform 1.5s ease-in-out;
+}
+
+/* Zoom effect on active slide */
+.carousel-item.active img {
+  transform: scale(1.05);
+}
+
+/* Fade transition */
+.carousel-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+/* Hide overflow */
+.carousel-inner {
+  overflow: hidden;
+}
+
+/* Background video wrapper */
+.carousel-bg-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;   /* fixed height for desktop */
+  overflow: hidden;
+}
+
+/* Background video styling */
+.bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Content over video */
+.cbg {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   Responsive Media Queries
+   =========================== */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .carousel-inner img {
+    max-width: 100%;
+    padding-bottom: 5px;
+  }
+
+  .carousel-bg-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;  /* widescreen ratio */
+  }
+}
+
+/* Mobile screens (≤576px) */
+@media (max-width: 576px) {
+  .carousel-item img {
+    width: 90%;          /* shrink image width */
+    max-width: 220px;    /* cap maximum width */
+    max-height: 180px;   /* reduce height */
+    margin: auto;        /* keep centered */
+    aspect-ratio: 4 / 3; /* tighter ratio for phones */
+    object-fit: contain;
+  }
+
+  /* shrink bg video wrapper on phones */
+  .carousel-bg-wrapper {
+    height: 155px;        /* fixed smaller height for phones */
+    aspect-ratio: auto;   /* let height dominate */
+  }
+}
+
+/* Very small phones (≤480px) */
+@media (max-width: 480px) {
+  .carousel-inner img {
+    padding-bottom: 0;
+  }
+
+  /* shrink bg video wrapper further on very small phones */
+  .carousel-bg-wrapper {
+    height: 150px;        /* even smaller height */
+    aspect-ratio: auto;   /* override ratio */
+  }
+}
+
+/* carousel section ends */
+
+/* Sticky card styling */
+.sticky {
+  position: fixed;
+  top: 30%;
+  right: 5%;
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .sticky {
+    top: 150px;
+    right: 2%;
+    width: 170px;
+    padding: 8px;
+  }
+
+  .sticky .card-title {
+    font-size: 1rem;
+  }
+
+  .sticky .card-text {
+    font-size: 0.9rem;
+  }
+
+  .sticky h6 {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  
+  .sticky {
+    display: none ;   /* ✅ hide sticky box on small screens */
+  }
+
+}
+
+/* Sticky card styling ends */
+
+/* company moto starts */
+.company-moto h3,
+.company-moto p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Fluid scaling with clamp() */
+.company-moto h3 {
+  /* min size: 1rem, preferred: 2.5vw, max size: 1.5rem */
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.company-moto p {
+  /* min size: 0.85rem, preferred: 2vw, max size: 1.2rem */
+  font-size: clamp(0.85rem, 2vw, 1.2rem);
+  padding: 0 clamp(0.5rem, 2vw, 2rem);
+}
+
+/* company moto ends */
+
+
+/* Service start */
+.service {
+  margin: 15px;
+  background: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: whitesmoke;
+  transition: transform 0.3s ease;
+}
+
+/* Optional hover effect */
+.service:hover {
+  transform: translateY(-5px);
+}
+
+/* Headings and text scale dynamically */
+.service h3 {
+  font-size: clamp(1.2rem, 2vw, 1.8rem); /* scales between mobile and desktop */
+}
+
+.service p {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem); /* scales smoothly */
+  line-height: 1.5;
+}
+
+/* Responsive tweaks for tablets */
+@media (max-width: 768px) {
+  .row-service {
+    gap: 30px;
+  }
+
+  .service {
+    padding: 1.2rem;
+  }
+}
+
+
+/* Mobile & small devices */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+
+  .row-service {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;            /* vertical spacing between cards */
+    margin: 0;            /* reset Bootstrap row negative margins */
+  }
+
+  .service {
+    width: 100%;
+    max-width: 95%;       /* leaves 5% gap on each side */
+    margin: 0 auto 1rem;  /* centers the card */
+    padding: 1rem;        /* inner spacing inside card */
+  }
+
+  .service h3 {
+    font-size: 1.1rem;
+  }
+
+  .service p {
+    font-size: 0.85rem;
+  }
+}
+
+/* service end*/
+
+/* gallery start */
+/* ==== Carousel Container ==== */
+.carousel {
+  margin-top: 2rem;
+}
+
+/* ==== Carousel Item Styling ==== */
+.carousel-item {
+  overflow: visible !important;
+}
+
+/* ==== Card Styling ==== */
+.carousel .card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* ==== Hover Effect ==== */
+.carousel .card:hover {
+  transform: scale(1.02);
+}
+
+/* ==== Image Styling (Dynamic) ==== */
+.carousel .card-img-top {
+  width: 100%;
+  height: 350px;
+  aspect-ratio: 4 / 3; /* Maintains consistent proportions */
+  object-fit: cover;
+  object-position: center;
+  padding: 10px;
+  display: block;
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+/* ==== Card Body Styling ==== */
+.carousel .card-bodygallery {
+  text-align: center;
+  padding: 2px;
+  flex-grow: 1;
+}
+
+/* ==== Responsive Adjustments ==== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .carousel .card-img-top {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+/* Phone only */
+@media (max-width: 576px) {
+  .carousel .card {
+    width: 85%;          /* reduce card width */
+    max-height: 350px;   /* reduce card height */
+    margin: auto;        /* center card */
+    padding: 0px;        /* reduce spacing */
+    border-radius: 12px;
+   
+  }
+
+  .carousel .card-img-top {
+    width: 90%;          /* reduce image width */
+    margin: auto;
+    max-height: 250px;   /* reduce image height */
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    object-fit: cover;
+   
+  }
+
+  .carousel .card-bodygallery {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .carousel .card {
+    width: 85%;               /* Shrinks card width */
+    margin: auto;
+    padding: 5px;            /* Less internal spacing */
+    border-radius: 20px;
+    max-height: 320px;        /* Limits overall card height */
+    overflow: hidden;
+  }
+
+  .carousel .card-img-top {
+    aspect-ratio: 4 / 3;      /* Balanced image ratio */
+    height: auto;             /* Let aspect ratio control height */
+    max-height: 180px;        /* Prevent image from dominating */
+    padding: 2px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .carousel .card-bodygallery {
+    font-size: 0.8rem;
+    /* padding: 6px; */
+  }
+}
+
+
+/* gallery end */
+
+
+/* recentwork section start */
+
+.recentwork {
+  
+  margin-bottom: 0;      /* ensure no extra spacing below */
+  /* padding-bottom: 2rem;  */
+  
+}
+
+.recentwork-card1 {
+  margin-bottom: 0%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.recentwork-card1 img {
+  width: 100%;
+  height: 350px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.recentwork-card1:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay hidden by default */
+.card1-overlay {
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  /* color: #fff; */
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: translateY(100%);
+}
+
+/* Show overlay on hover */
+
+.recentwork-card1:hover .card1-overlay {
+  top:0;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* recentwork section ends */
+
+
+/* milestones starts*/
+.milestone {
+  display: flex;
+  flex-direction: column;   /* stack heading above image */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;          /* wrap on small screens */
+  gap: 1rem;
+  padding: 1rem;
+  text-align: center;
+
+  mix-blend-mode: multiply; /* This blends white pixels with the background */
+  background-color: transparent; /* Ensures no background interference */
+
+}
+
+/* Heading style */
+.milestone h2 {
+  font-size: 2rem;
+  font-weight: 550;
+  margin: 0.5rem 0;
+  color: black;
+  padding: 2px;
+
+}
+
+/* Image style */
+.milestone img {
+  max-width: 550px;       /* default size */
+  height: auto;
+  border-radius: 6px;
+  filter: grayscale(100%); /* black & white by default */
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.milestone img:hover {
+  filter: grayscale(0%);   /* back to color on hover */
+  transform: scale(1.05);  /* optional zoom effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .milestone h2 {
+    font-size: 1.3rem;     /* shrink heading */
+  }
+  .milestone img {
+    max-width: 250px;      /* shrink image */
+  }
+}
+
+@media (max-width: 480px) {
+  .milestone h2 {
+    font-size: 1.1rem;     /* smaller heading on phones */
+  }
+  .milestone img {
+    max-width: 130px;       /* shrink further on small screens */
+  }
+}
+
+/* milestones ends*/
+
+
+/* contact section start */
+.contact-card{
+  background:rgb(255, 228, 228);
+  opacity: 0.75;
+}
+
+/* footer section starts */
+.bgfoot {
+  background-image: url('./images/gallery/map.png');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.4); /* semi-transparent layer */
+  background-blend-mode: overlay;             /* blends image + color */
+}
+
+.fcolor h4 {
+  font-size: 1.4rem;   /* slightly larger heading */
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.fcolor p {
+  font-size: 1.1rem;   /* bump up paragraph size */
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.fcolor small {
+  font-size: 0.95rem;  /* make footer note more readable */
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.fcolor a i {
+  font-size: 1.3rem;   /* bigger icons for visibility */
+  color: #1c1c1c;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.fcolor a i:hover {
+  color: #343a40;
+}
+
+/* footer section end */
+
+
+
+
