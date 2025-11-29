@@ -3,6 +3,13 @@
     background: radial-gradient(circle, rgba(245, 237, 237, 1) 0%, rgba(148, 187, 233, 1) 100%);
 
 }
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1c1c1c;
+    transition: color 0.3s ease;
+    
+}
 /* navbar section starts */
 
 
@@ -549,6 +556,7 @@
 }
 
 /* footer section end */
+
 
 
 
